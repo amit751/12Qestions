@@ -1,3 +1,58 @@
+
+let msg;
+let csum;
+let x;
+let sum;
+let qr =0;
+let arr1=[];
+let d;
+
+function digits(csum){
+    let stringCsum= csum.toString();
+    let csumLenght=stringCsum.length;
+    for( let a=0 ; a<csumLenght ; a++){
+        let digit=stringCsum.slice(a,a+1);
+        sum += digit**2;
+        
+    }
+    return sum;
+}
+
+
+for( let i=1 ; qr!==5 ; i++){
+    arr1=[];
+    d=0;
+    msg=0;
+    let count = i;
+
+   while(msg=0){
+        x = digits(count);
+        if(x===1){
+            console.log(i + " is happy.");
+            qr++;
+            msg= 1;
+        }
+        else if(arr1.includes(x)){
+            console.log( i+ " is sad");
+            msg= 1;
+
+        } 
+        else {
+            arr1.push(x);
+            count=x;
+            
+        }    
+                
+                
+            
+                    
+                
+            
+        
+    }
+}
+
+
 // let qr =0;
 // let sum;
 // let d=0;
@@ -26,63 +81,6 @@
 //         }
 //     }
 // }
-
-
-
-let msg;
-let csum;
-let x;
-let sum;
-let qr =0;
-let arr1=[];
-let d;
-
-function digits(csum){
-    let stringCsum= csum.toString();
-    let csumLenght=stringCsum.length;
-    for( let a=0 ; a<csumLenght ; a++){
-        let digit=stringCsum.slice(a,a+1);
-        sum += digit**2;
-        
-    }
-    return sum;
-}
-
-
-for( let i=0 ; qr!==5 ; i++){
-    arr1=[];
-    d=0;
-    msg=0;
-
-   while(msg=0){
-        x = digits(i);
-        if(x===1){
-            console.log(i + " is happy.");
-            qr++;
-            msg= 1;
-        }
-        else{
-            for( let g=0 ; g<arr1.length ; g++){
-                if(x===arr1[g]){
-                    console.log( i+ " is sad");
-                    msg= 1;
-                    break;
-                }
-            }
-                
-                
-            arr1[d]=x;
-            d++;
-            i=x;
-                    
-                
-            
-        }
-    }
-}
-
-
-
 
 
 
