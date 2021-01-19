@@ -6,7 +6,7 @@ let qr =0;
 let arr1=[];
 let d;
 
-function digits(csum){
+function sumSquareDigits(csum){
     let stringCsum= csum.toString();
     let csumLenght=stringCsum.length;
     for( let a=0 ; a<csumLenght ; a++){
@@ -18,25 +18,25 @@ function digits(csum){
 }
 
 
-for( let i=1 ; qr!==5 ; i++){
-    arr1=[];
+for( let i=1 ; happyNumbersCount!==5 ; i++){
+    history=[];
     d=0;
     msg=0;
     
 
    while(msg=0){
-        arr1[d]=x;
+        history[d]=sum;
         d++;
-        i=x;
-        x = digits(i);
-        if(x===1){
+        i=sum;
+        sum = sumSquareDigits(i);
+        if(sum===1){
             console.log(i + " is happy.");
-            qr++;
+            happyNumbersCount++;
             msg= 1;
         }
-        else if (1){
-            for( let g=0 ; g<arr1.length ; g++){
-                if(x===arr1[g]){
+        else {
+            for( let g=0 ; g<history.length ; g++){
+                if(sum===history[g]){
                     console.log( i+ " is sad");
                     msg= 1;
                     break;
