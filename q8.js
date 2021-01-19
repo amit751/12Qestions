@@ -1,54 +1,38 @@
 
-let msg;
-let csum;
-let x;
-let sum;
-let qr =0;
-let arr1=[];
-let d;
 
-function digits(csum){
-    let stringCsum= csum.toString();
-    let csumLenght=stringCsum.length;
-    for( let a=0 ; a<csumLenght ; a++){
-        let digit=stringCsum.slice(a,a+1);
+let happyNumbersCount =0;
+
+function sumSquareDigits(num){
+    const numString= num.toString();
+    let sum=0;
+    for(let i=0 ; i < numString.length ; i++){
+        const digit = Number(numString.slice(i,i+1));
         sum += digit**2;
-        
     }
     return sum;
 }
 
 
-for( let i=1 ; qr!==5 ; i++){
-    arr1=[];
-    d=0;
-    msg=0;
-    let count = i;
+for( let i=1 ; happyNumbersCount!==5 ; i++){
+    const history = [];
+    
+    let current = i;
 
-   while(msg=0){
-        x = digits(count);
-        if(x===1){
+   while(true){
+        const sum = sumSquareDigits(current);
+        if(sum===1){
             console.log(i + " is happy.");
-            qr++;
-            msg= 1;
+            happyNumbersCount++;
+            break;
         }
-        else if(arr1.includes(x)){
+        if(history.includes(sum)){
             console.log( i+ " is sad");
-            msg= 1;
+            break;
 
         } 
-        else {
-            arr1.push(x);
-            count=x;
-            
-        }    
-                
-                
-            
-                    
-                
-            
-        
+
+        history.push(sum);
+        current=sum;
     }
 }
 
